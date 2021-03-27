@@ -1,12 +1,14 @@
 import React from 'react';
 import './button.css';
-const Button = () => {
+const Button = ({tasks,onDelete}) => {
     return (
-        <div>
-            <button className="button">
-                Add Task
+       
+            <div>
+            <button onClick= {() => this.onDelete(tasks.id)}>
+            
             </button>
         </div>
+        
     );
 }
 export default Button;
