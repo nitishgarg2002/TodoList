@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-const Task = ({user}) => {
+const Task = ({user,onDelete}) => {
     return (
         <div>
-            <li>
+            <button onClick= {() =>onDelete(user.id)}>
                 {user}
-            </li>
+            </button>
         </div>
     );
 }
