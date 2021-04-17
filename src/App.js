@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
-import Button from './components/button'
-import Task from './components/task';
+import Addtodo from './components/AddTodo';
 class App extends React.Component {
   constructor() {
     super();
@@ -40,22 +39,9 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
-        <input  type="text" onChange={this.inputadd} value={this.state.input} />
-        <button  onClick={this.onsubmit}>
-          Add</button>
-        {this.state.list.map(tasks => {
-          return (
-            <li>
-               <button onClick={() => this.onDelete(tasks.id)}>
-              {tasks.value}{`\n`}
-            </button>
-            </li>
-            
-    )
-        })}
-
-        {/* {console.log(this.state.list[1])} */}
+      <div className="app" >
+        <h1 className="h1" >My Todos</h1>
+        <Addtodo/>
       </div>
     );
   }
