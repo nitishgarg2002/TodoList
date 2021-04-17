@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Addtodo from './components/AddTodo';
+import 'bootstrap/dist/css/bootstrap.min.css';
 class App extends React.Component {
   constructor() {
     super();

@@ -18,29 +18,9 @@
   padding: 10px;
   height: 80px;
   background-color: blue;
-  width: 80%;
+  width: 100%;
   margin: auto;
   border-radius: 5px;
   display: flex;
-  flex-direction: row;
+
 }
-/* .input{
-  margin: auto;
-  height: 25px;
-  width: 250px;
-  border-radius: 5px;
-  outline: none;
-  display: flex;
-  justify-content: center;
- 
-}
-.btn {
-  color: white;
-  font-weight: bold;
-  height: 40px;
-  width: 150px;
-  background-color: gold;
-  border-radius: 15px;
-  outline: none;
-  
-} */
