@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, InputGroup, Form, FormControl, Row, Container, Col } from 'react-bootstrap';
-import TodoCard from '../TodoCard';
+import { Button, InputGroup, FormControl, Row,Col } from 'react-bootstrap';
+
 
 
 class Addtodo extends React.Component {
@@ -29,7 +29,7 @@ class Addtodo extends React.Component {
     if (this.state.input !== '' && this.state.desc !== '') {
 
       const userValue = {
-
+        id:Math.random(),
         input: this.state.input,
         desc: this.state.desc
       };
@@ -48,6 +48,7 @@ class Addtodo extends React.Component {
   deleteItem(key){
     console.log('delete');
     console.log(key);
+    console.log(this.state.list);
     const list = [...this.state.list];
     const updateList = list.filter(item => item.id !== key);
     this.setState({
@@ -55,7 +56,7 @@ class Addtodo extends React.Component {
     });
   }
   render() {
-
+    
     return (
       <>
         <Row>
@@ -89,7 +90,22 @@ class Addtodo extends React.Component {
         </Row>
         {
           this.state.list.map((item,index)=>{ return(
-            <TodoCard name={item.input} desc = {item.desc} key={`${index}`} id= {index} delete={this.deleteItem} />
+            <div key={index}>
+            
+                <div  className="container bg-dark text-light rounded mb-3 d-flex flex-row h-50">
+                    <div className="d-flex flex-column mr-5" >
+                        <div className="h2 text-warning mt-2" >{item.input}  </div>
+                        <br></br>
+                        <div className="my-2 h3" >{item.desc}</div>
+                    </div>
+                    <div >
+                        <Button className="  mt-5 ml-5  shadow-none" variant="outline-success">Complete</Button>
+                        <Button onClick={() => this.deleteItem(item.id)} className=" mt-5  ml-5  shadow-none" variant="outline-danger">Delete</Button>
+                    </div>
+
+
+                </div>
+            </div>
           )})
         }
       </>
