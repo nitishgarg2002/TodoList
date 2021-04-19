@@ -45,6 +45,15 @@ class Addtodo extends React.Component {
 
 
   }
+  deleteItem(key){
+    console.log('delete');
+    console.log(key);
+    const list = [...this.state.list];
+    const updateList = list.filter(item => item.id !== key);
+    this.setState({
+      list:updateList,
+    });
+  }
   render() {
 
     return (
@@ -79,9 +88,8 @@ class Addtodo extends React.Component {
           </div>
         </Row>
         {
-        
-          this.state.list.map(item=>{ return(
-            <TodoCard name={item.input} desc = {item.desc}/>
+          this.state.list.map((item,index)=>{ return(
+            <TodoCard name={item.input} desc = {item.desc} key={`${index}`} id= {index} delete={this.deleteItem} />
           )})
         }
       </>
